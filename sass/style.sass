@@ -1,0 +1,77 @@
+// sass-lint:disable no-css-comments
+// sass-lint:disable border-zero
+// sass-lint:disable class-name-format
+// sass-lint:disable property-sort-order
+// sass-lint:disable no-ids
+// sass-lint:disable force-element-nesting
+// sass-lint:disable force-attribute-nesting
+
+/* 
+  ╦╔╗╔╔╦╗╔═╗═╗ ╦  ╔═╗╦ ╦╔═╗╔╦╗╔═╗╔╦╗  ╔═╗╔╦╗╦ ╦╦  ╔═╗╔═╗
+  ║║║║ ║║║╣ ╔╩╦╝  ║  ║ ║╚═╗ ║ ║ ║║║║  ╚═╗ ║ ╚╦╝║  ║╣ ╚═╗
+  ╩╝╚╝═╩╝╚═╝╩ ╚═  ╚═╝╚═╝╚═╝ ╩ ╚═╝╩ ╩  ╚═╝ ╩  ╩ ╩═╝╚═╝╚═╝
+ */
+
+$point7: rgba(0, 0, 0, .7)
+$point5: rgba(0, 0, 0, .5)
+$zero: rgba(0, 0, 0, 0)
+
+@use 'sass:map'
+
+// @each $entry, $record in $pics
+//   @each $field, $value in $entry
+//     .bg-#{$field}-#{$field}
+//       background-color: map-get(map-get($pics, $entry), 2)
+
+// @each $item, $color in $pics
+//   @each $shade, $value in $color
+//     .bg-#{$item}-#{$shade}
+//       background-color: $value
+
+// .bg-#{$type}-#{$pref}
+//   content: $content-value
+
+// @debug map.get($pics, $type)  // 500
+
+// @debug map.get($pics, "extra-bold")  // null
+
+$pics: ('Leadlight Sophie': 'rwxsu311f466dq4d5n05ae5toq1z54', 'Cocktail dress': '10ltqhehn6tem91lz6690gscfas8hg', 'Wet feet': 'b0vtskvosty8fr3q9yz3j81uw58rhy', 'Kylie': 'fwldd55gyv7xn4wihed8gzjjic7std', 'Bug an board': '79tckki71k11zsjv6pe4trk6iskaax', 'Kombi 1': 'mtjox82905n23nxny6clwarlehbnov', 'Split Windows': '6lyusqrj9hsbdsd30r07ejrw6hove1', 'Beach cricket': 'lj9urkxkxni0we7tfmowp9eyil4aqo', 'Flow': '9bsa5tbuhcih4do1yim8iqgslucybq', 'Verandah haven': '9nwihqgee873bqhwbrz3qajdfj6pzv', 'Zebra': 'hdgur83p2rliinaa9shrui1hc1dz8v', 'Poolside': '99ng1pexksxfjuafmeu370rymxaews', 'Surfer girl': 'tczrg1uxq79dbfggqh4dnfyarebpp3', 'Lace': '0mrea53h6tqi1221pmzvev9ui89mik', 'Passion': 'h3pmvao0j29lnpnn84m9zv119lzwm0', 'Shoe buckles': 'ttyv57rh536dayzc844lau6cts17sq', 'Just being there': 'z0ufz4uzati8fuijl69kdow8t75c39', 'Beach gates': 'z9og67aejgjh8c26ajetwvwnilgu5o', 'Beach run': 'jrdoxa5atxf7jmqtv2shjsj1d3c1do', 'Saxophone magic': 'iug3fdq0mu1hhpggwx7c573e99cxln', 'Teddy bear tours': 'zah6298rk0p9e1o7m16l0ay0dwybnx', 'Victoria commission': 'hnmsn10slzbpz5ipesp4exs206gvha', 'Lace dress': '8ekpgt0kxk23405j7pp0tje92ni27x', 'Sultry': 'gpzvxn6prtn2hxhnwav6vynj34zf53', 'Sun girl': 'szu7qjxxs2ut7tfhp9whdh5dvb5if5', 'Look in she eyes': '52m6apatpl9rxr5lt2wf4ih616yyzr', 'Sandy pants': 'k5krd0ns9f227fjein3kbqtdyoinoj', 'Yellow sunrise': 'ycy2kpr0yvv35m6sush7u2861qfe8j', 'Commission Tree hugger': '6eb7onkhydoh0innkv0owj9zpmhigj', 'Lifestyle': 'f2hyu0gj3egj590a2t8dv16g6sbiyk', 'Seduction': '965mrtd3damvvlepysc0clyyt7fs21', 'Bindi': 'q8e6dub65r1zjave4kawfivsb49cmo', 'Little red dress': 'svsghi7ylj35qd308npofdy3loipq8', 'Not the average': 'l7bz4cypgc8bqnf3brxxv2y2h1yvfy', 'Colourful cottage': 'lk96fcaoi69yvxuirave32lt6jmxr0', 'Clint Eastwood': 'lra9hj457kojrl8uqyrb58g5byqe2u', 'John Lennon': 'k49wz7ofuxe1c5640g45yv89fw7eso', 'Marilyn colour': '74wdiriwpkfqb0fwnu5jv0ejazcw44', 'Pink': 'vxkewyngij7s5ocwqyw5j42z0w49fm', 'The look': '8qp6wh75vhsmhzfdkev0fhf2pcgbrl', 'Mirror image': '45fff2wc24k0epu6co4y4fpxa6vldr', 'Coffee break': 'jx8fslqcdezr89x65vv1k8ha0krhov', 'Fishing village': '1hqzl3m75u3hcp3o7tljl8lgza6dkj', 'Villa': 'wlauxzekr3t3ru4yz8z6z43wv11r1y', 'Lipstick': '7j7it5s4h9a1vhr0aq4m99vaij0o4v', 'Those were the days': '2d8rlye6kvb80qunvkekrzs9zsw2r7', 'Just do it': 'oqn0r71rw4oa3nea4kondgdhf1c3yj', 'Sisters, Commission': '9t5gz9tnwg417w61nfwybzpjxcves9', 'Simply Elegant': 'uv4g1d5pywj5hp03mram5ge61frpjt', 'Stand Out': 'j072hvicnh013ugzor107p4tfh79ib', 'The Mask': '0rga2gralygcc37nqkfj7a2qjomfv7', 'What Do You Think Bear': 'h7iod4ahufkc2oac40r7xjjchcwt6m', 'In The Shadows': 'dl61ekmokjett67nlzuuynm15jwuo8', 'Trouble 3, Commission': 'iknh34na8yeqkb45g7d85iq9ng4rg4', 'Elegant': '88lf9mkngnrtulxpvls5hgvn26kpq8', 'Leadlight Hair': 'hhiil4r6g4nag7jrzpauz8iywgqze9', 'Three Boys, Commission': 'hkd44ka0nr6f92jl0xr6hjmuek515x', "Come On Let's Go": 'yx4mv3wan36tfu5kjptzhy1ruisjv5', 'Skate Break': 'tdtob9evu2vfcy1x9s3ayq6a7fm8hp', 'Skate the Mall': 'k6gyx1a2kadxvgy4ec2dqiw5ystvo3', 'Water Is A Bit Cold': '0qslfxlozvcmg9idlzhd3v8oy0ae4n', 'Who Let The Boat Out': 'kscag5s0wa8grvkpkp6ljh2aupgp2d', 'Albert Einstein': 'schbt2rl6targh7qt2zuvcnjtw1wkf', 'Beach, Sand, Kombi, Surf': 'x17iv63kkvf2dtw90ps351yqpn5mjw', 'Blue eyes': 'pl8ln1m3ocue0szj0j5keh4xnjpgyf', 'Bob Hawke': 'xt9jitccheuui57ynv08k9p3nqfooa', 'Bug at the beach': 'eruqceriaakmrge1y2ufxl2994c9tu', 'Charlie Chaplin': 'uf8ui7syg9wkhv1lgyhulss37h0gcm', 'Chill at the Beach': '937o9zu7pongvah27wvcu81gj00qon', 'Commission. I can hear them laughing from here': 'cszkokh2ronovt6fohohcdqjvmqlqg', "I'll call you": 'a3ir57qc5ww01xpos4kn1t2rrg6k5m', 'Kylie (2)': 'ggwoj0a04pbln6bl3y67wqydjtug67', 'rollin stones': '21z7binhhb8gneg6444vahp0vdmxb9', 'Sophie': 'u55rl5mqspzo2xe0ba4gmo2yn3b4ga', 'Summer Days': 'pqfuz1zt1bycwfghwnix2ohsxgc2sx', 'That voice': 'e6d2nybtt7yt2q52y06myxltsu6gk8', 'Rainbow stripes': 'bsr600zosmcff23jef3dg0kx6gaxgq', '4 Mates': 'zebkeu8gtab4qq6rdpd3soiffv5o26', 'Intense': 'fi3irnvp5hmp61orcbljabm3fgkj40', 'Marilyn Monroe': 'vhovmz5s6qynfo1mlp22myfsnyuvm7', 'Natural Beauty': '6yfzs1zz2p88j5gvyqpdf75m0l0nvy', 'Touch of Yellow': 'cpl35l95p6sp1sm2t5vqumhewe9ab3', 'Come on Oscar its not cold': 'shtiqpin9sao3t4cejl2y2shjfhq3s', 'Am I dreaming': '448qgvkj496mdklk1k17kas8nwyyct', 'Stripes': '5ly6jw0jymh6f8ww8vedosml5j2p8n', 'Black lingerie': 'aqulr72ue2y28nndumbc30cm8hv4dj', 'Spin': 'npist4e7ey85an91ofxxy9vce6mprm', 'VW line up': '0t1yl1ewk836d3xssnzwa6p52gf0zk', 'Class': '2h8orz0p09cnc9hqya45c7s00xl7l6', 'Howdy': 'hbr8th7u5g46g9nm1uqtjwtxagdrpu', 'Kombi 6': '69astrqj8ft64wyep10g6jxz4towfw', 'Kombi camping': 'u1z1toeh00giwusxff7b8quumvbueh', 'Billabong girl': 'fsh55ix8gcz1kgr2w2mehkfvmoq7q7', 'Girls just want to have fun': '4vxfwfq8wj26oodb0al9yfuoo5oowd', 'Ready to go': '89hw4nag602itupqsneq0f79hu8q2d', 'Piegeon': '0syvlpt1k6j0labe46k7i5ns2yfkmo', 'Are you serious': 'piftqzpwcbsmuxw5l5ur1g5xla3nuf', 'Check this out': 'pn23floyyc861ce3zbxroeuylgtk1l',  'Come on': '7tz6i2wksn81vw024v9u2did84bubw', 'Sailing starts young': '6d8ktwhsxlmr85nu7y6oyvnxi5el0s', "Ah.. it's so good": 'j3i1axixlzewhwsiqxcr0mt7w9maas', 'Touch of tranquility': 'fm276eagpijs0foxsood1gc2tf0xpb', 'Butterfly girl': 'v9v6s2cqpfzl3eso3b9cmez755mbwf', 'Checking it out': '8odquar24mm3atuu2969hhk5jv65up', '3 sisters': '04xoysvyamhrcrcov053ixwn2ghktf', 'Wild Hair': '8h68xtesvuk7q9ua5upg9d2kmc7lky', "Kombi's at the beach": '8y79glb0m5tehy03vvfmthh9shel0p', 'Kombi passion': '10d8vnnwb0cix5pnpd8nc0tb7cv78c', 'Vw 1': '1dwl7w3gizxw76tcgrhjg8cx639ft2', 'VW 011': 'qkjsdu7ewsqi9wgim2vjnwo95imdcg', 'Leadlight Intense look': 'tvee3qur1mmx0wdxg8bi7don2dslmn', 'Unzipped': '38c0uaddmdjktqlhpvehrrke2v57w0')
+
+// THIS BLOCK
+@each $name, $code in $pics
+  .gallery-lightbox-item[data-slide-url='#{$code}']
+    .gallery-lightbox-item-wrapper
+      &::after
+        content: '#{$name}'
+        transition: color 300ms ease-in-out 0s
+// THIS BLOCK
+
+.gallery-lightbox-item[data-active='true']
+  .gallery-lightbox-item-wrapper
+    &::after
+      color: $point7
+      transition: color 300ms ease-in-out 0s
+
+.gallery-lightbox-item[data-active='false']
+  .gallery-lightbox-item-wrapper
+    &::after
+      color: $zero
+      transition: color 300ms ease-in-out 0s
+
+.gallery-lightbox-item
+  .gallery-lightbox-item-wrapper
+    &::after
+      font-family: Helvetica
+      font-size: 24px
+      // text-shadow: 2px 2px 2px $point5
+      position: absolute
+      display: block
+      width: 400px
+      text-align: center
+      border: 0 solid
+      top: -50px
+      left: calc(50% - 200px)
+      z-index: 99999
+      // color: $zero
+      // transition: color 200ms ease-in-out 500ms
+      // overflow:  visible !important
